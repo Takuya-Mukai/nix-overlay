@@ -81,6 +81,7 @@
             ps.plotly
             ps.scikit-learn
             ps.neopyter
+            ps.openpyxl
           ]);
         in
         {
