@@ -99,11 +99,6 @@
               pkgs.git
             ];
           };
-          openhands = pkgs.mkShell {
-            packages = [
-              pkgs.uv
-            ];
-          };
         }
       );
 
