@@ -82,6 +82,7 @@
             ps.scikit-learn
             ps.neopyter
             ps.openpyxl
+            ps.ipython3
           ]);
         in
         {
