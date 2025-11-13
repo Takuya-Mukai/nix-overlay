@@ -72,22 +72,22 @@
 
           # Python 環境の定義
           dataAnalysisPython = pkgs.python311.withPackages (ps: [
-            ps.uv
-            # ps.numpy
-            # ps.pandas
-            # ps.pillow
-            # ps.scipy
-            # ps.torch
-            # ps.torchvision
-            # ps.jupyterlab
-            # ps.matplotlib
-            # ps.seaborn
-            # ps.plotly
-            # ps.scikit-learn
-            # ps.neopyter
-            # ps.openpyxl
-            # ps.ipython
-            # ps.ydata-profiling
+            # ps.uv
+            ps.numpy
+            ps.pandas
+            ps.pillow
+            ps.scipy
+            ps.torch
+            ps.torchvision
+            ps.jupyterlab
+            ps.matplotlib
+            ps.seaborn
+            ps.plotly
+            ps.scikit-learn
+            ps.neopyter
+            ps.openpyxl
+            ps.ipython
+            ps.ydata-profiling
           ]);
         in
         {
