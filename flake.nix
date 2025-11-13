@@ -52,7 +52,7 @@
         # --- A. 通常のパッケージ (pkgs のトップレベルに追加) ---
         # another = anotherPkgFunction { pkgs = final; };
 
-        python311 = prev.python311.override {
+        python312 = prev.python312.override {
           packageOverrides = pyfinal: pyprev: {
             neopyter = neopyterFunction { pkgs = final; };
           };
@@ -71,7 +71,7 @@
           };
 
           # Python 環境の定義
-          dataAnalysisPython = pkgs.python311.withPackages (ps: [
+          dataAnalysisPython = pkgs.python312.withPackages (ps: [
             # ps.uv
             ps.numpy
             ps.pandas
