@@ -50,8 +50,12 @@
 
           # Python 環境の定義
           dataAnalysisPython = pkgs.python312.withPackages (ps: [
+            ps.ipython
             ps.jupyterlab
             ps.notebook
+            ps.ipykernel
+            ps.jupyterlab-vim
+
             ps.numpy
             ps.pandas
             ps.matplotlib
@@ -61,8 +65,6 @@
             ps.plotly
             ps.scikit-learn
             ps.openpyxl
-            ps.ipython
-            ps.jupyterlab-vim
             # ps.ydata-profiling
           ]);
         in
