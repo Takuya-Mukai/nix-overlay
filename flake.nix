@@ -18,27 +18,8 @@
       # 各システムごとに pkgs を生成するためのヘルパー関数
       forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
 
-      # 各システム用の nixpkgs のパッケージセット
-      pkgsFor = system: nixpkgs.legacyPackages.${system};
-
-      neopyterFunction = import ./pkgs/neopyter.nix;
-      # ex)
-      # anotherPkgFunction = import ./pkgs/another.nix;
-
     in
     {
-      packages = forAllSystems (
-        system:
-        let
-          pkgs = pkgsFor system;
-        in
-        {
-          # ここで {pkgs} を渡して関数を呼び出し、ビルドする
-          neopyter = neopyterFunction { inherit pkgs; };
-          # another = anotherPkgFunction { inherit pkgs; };
-        }
-      );
-
       overlays.default =
         final: prev:
         let
@@ -46,7 +27,10 @@
           python3 = final.python3;
           fetchPypi = final.fetchPypi;
 
-          jupyterlab-vim = import ./pkgs/jupyterlab-vim.nix {
+          jupyterlab-vimOverride = import ./pkgs/jupyterlab-vim.nix {
+            inherit lib python3 fetchPypi;
+          };
+          japanize-matplotlibOverride = import ./pkgs/japanize-matplotlib.nix {
             inherit lib python3 fetchPypi;
           };
 
@@ -54,12 +38,8 @@
         {
           python312 = prev.python312.override {
             packageOverrides = pyfinal: pyprev: {
-              neopyter = neopyterFunction { pkgs = final; };
-              visions = pyprev.visions.overridePythonAttrs (old: {
-                propagatedBuildInputs = (old.propagatedBuildInputs or [ ]) ++ [ pyfinal.imagehash ];
-                doCheck = false; # テスト無効化
-              });
-              jupyterlab-vim = jupyterlab-vim;
+              jupyterlab-vim = jupyterlab-vimOverride;
+              japanize-matplotlib = japanize-matplotlibOverride;
             };
           };
         };
@@ -78,6 +58,7 @@
             ps.numpy
             ps.pandas
             ps.matplotlib
+            ps.japanize-matplotlib
             ps.scipy
             ps.seaborn
             ps.plotly
