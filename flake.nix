@@ -51,9 +51,9 @@
           # Python 環境の定義
           dataAnalysisPython = pkgs.python312.withPackages (ps: [
             ps.ipython
-            ps.jupyterlab
-            ps.notebook
             ps.ipykernel
+            ps.jupyter
+            ps.notebook
             ps.jupyterlab-vim
 
             ps.numpy
