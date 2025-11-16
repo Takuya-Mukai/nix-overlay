@@ -66,6 +66,7 @@
             ps.scikit-learn
             ps.openpyxl
             ps.lightgbm
+            ps.optuna
             # ps.ydata-profiling
           ]);
         in
