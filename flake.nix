@@ -67,6 +67,7 @@
             ps.openpyxl
             ps.lightgbm
             ps.optuna
+            ps.tabulate
             # ps.ydata-profiling
           ]);
         in
