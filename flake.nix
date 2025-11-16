@@ -65,6 +65,7 @@
             ps.plotly
             ps.scikit-learn
             ps.openpyxl
+            ps.lightgbm
             # ps.ydata-profiling
           ]);
         in
