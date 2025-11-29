@@ -24,7 +24,7 @@
         final: prev:
         let
           lib = final.lib;
-          python3 = final.python312;
+          python3 = final.python311;
           fetchPypi = final.fetchPypi;
 
           japanize-matplotlibOverride = import ./pkgs/japanize-matplotlib.nix {
@@ -33,7 +33,7 @@
 
         in
         {
-          python312 = prev.python312.override {
+          python311 = prev.python311.override {
             packageOverrides = pyfinal: pyprev: {
               japanize-matplotlib = japanize-matplotlibOverride;
             };
@@ -49,7 +49,7 @@
           };
 
           # Python 環境の定義
-          dataAnalysisPython = pkgs.python312.withPackages (ps: [
+          dataAnalysisPython = pkgs.python311.withPackages (ps: [
             ps.ipython
             ps.ipykernel
             ps.jupyter
