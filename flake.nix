@@ -53,6 +53,7 @@
             ps.ipython
             ps.ipykernel
             ps.jupyter-client
+            ps.notebook
             ps.jupyter
 
             ps.numpy
