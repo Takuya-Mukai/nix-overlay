@@ -57,6 +57,7 @@
             ps.jupyter
             ps.statsmodels
             ps.lightgbm
+            ps.catboost
 
             ps.numpy
             ps.pandas
