@@ -65,6 +65,7 @@
             ps.scipy
             ps.seaborn
             ps.plotly
+            ps.shap
             ps.scikit-learn
             ps.openpyxl
             ps.lightgbm
