@@ -63,7 +63,6 @@
             ps.plotly
             ps.shap
             ps.scikit-learn
-            ps.sklearn-genetic
             ps.openpyxl
             ps.lightgbm
             ps.optuna
